@@ -22,6 +22,13 @@ public class Ball {
         yVel=Game.sign(Math.random() * 2.0 - 1);
 
     }
+    public int getX(){
+        return x;
+    }
+
+    public int getY(){
+        return y;
+    }
     public void changeYDir(){
         yVel *= -1;
     }
@@ -32,6 +39,23 @@ public class Ball {
     public void draw(Graphics a) {
         a.setColor(Color.white);
         a.fillRect(x,y,SIZE,SIZE);
+
+    }
+
+    public void update(Paddle paddle1, Paddle paddle2) {
+        x += xVel * speed;
+        y += yVel * speed;
+
+        if(y + SIZE >= Game.HEIGHT || y<=0)
+            changeYDir();
+        if(x + SIZE >= Game.WIDTH) {
+            paddle1.addPoint();
+            reset();
+        }
+        if(x <= 0){
+            paddle2.addPoint();
+            reset();
+        }
 
     }
 }

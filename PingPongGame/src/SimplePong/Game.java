@@ -16,19 +16,16 @@ public class Game extends Canvas implements Runnable {
     public Game() {
         canvasSetup();
         new Window("Ping Pong",this);
+        initialize();
 
 
     }
 
-
-    private void initialize(){
-        ball=new Ball();
-        paddle1=new Paddle(Color.green,true);
-        paddle2=new Paddle(Color.red,false);
-
-
-
+    public static int ensureRange(int val,int min,int max) {
+        return Math.min(Math.max(val,min),max);
     }
+
+
     private void canvasSetup() {
         this.setPreferredSize(new Dimension(WIDTH,HEIGHT));
         this.setMaximumSize(new Dimension(WIDTH,HEIGHT));
@@ -67,6 +64,11 @@ public class Game extends Canvas implements Runnable {
     }
 
     private void update() {
+        ball.update(paddle1,paddle2);
+
+        paddle1.update(ball);
+        paddle2.update(ball);
+
     }
 
     private void draw() {
@@ -80,11 +82,20 @@ public class Game extends Canvas implements Runnable {
         Graphics g =buffer.getDrawGraphics();
         drawBackground(g);
 
-       ball.draw(g);
+         ball.draw(g);
+         paddle1.draw(g);
+         paddle2.draw(g);
+
 
 
         g.dispose();
         buffer.show();
+
+    }
+    private void initialize(){
+        ball=new Ball();
+        paddle1=new Paddle(Color.green,true);
+        paddle2=new Paddle(Color.red,false);
 
     }
 
