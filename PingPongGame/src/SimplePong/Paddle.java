@@ -44,25 +44,25 @@ public class Paddle {
         g.drawString(scoreText,sx,50);
     }
 
-    public void update(Ball ball) {
+    public void update(Ball b) {
         y = Game.ensureRange(y += vel,0,Game.HEIGHT-height);
-        int ballX = ball.getX();
-        int ballY = ball.getY();
+        int ballX = b.getX();
+        int ballY = b.getY();
 
 
         if(left){
             if(ballX <= width && ballY + Ball.SIZE >= y && ballY <= y+height)
-            ball.changeXDir();
+            b.changeXDir();
         }
         else
         {
             if(ballX + Ball.SIZE >=Game.WIDTH - width && ballY + Ball.SIZE >= y && ballY <= y + height)
-                ball.changeXDir();
+                b.changeXDir();
         }
     }
 
     public void switchDirection(int direction) {
-        vel=speed*direction;
+        vel=speed * direction;
 
     }
     public void stop(){

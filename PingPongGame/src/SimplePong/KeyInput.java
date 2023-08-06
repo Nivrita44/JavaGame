@@ -40,23 +40,23 @@ public class KeyInput extends KeyAdapter{
         int key=e.getKeyCode();
         if(key==KeyEvent.VK_UP)
         {
-            p2.switchDirection(-1);
+            //p2.switchDirection(-1);
             up2=false;
         }
         if(key==KeyEvent.VK_DOWN)
         {
-            p2.switchDirection(1);
+            //p2.switchDirection(1);
             down2=false;
         }
         if(key==KeyEvent.VK_W)
         {
-            p1.switchDirection(-1);
+            //p1.switchDirection(-1);
             up1=false;
         }
         if(key==KeyEvent.VK_S)
         {
-            p1.switchDirection(1);
-            down2=false;
+            //p1.switchDirection(1);
+            down1=false;
         }
         if(!up1&&!down1){
             p1.stop();

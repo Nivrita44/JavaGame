@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6c5ebab-fdb8-4e1a-b8fc-617b4f71a3a6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/SimplePong/KeyInput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SimplePong/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimplePong/Ball.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SimplePong/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimplePong/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SimplePong/KeyInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimplePong/KeyInput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SimplePong/Paddle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimplePong/Paddle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +84,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/PingPongGame$Game.ic" NAME="Game Coverage Results" MODIFIED="1691259961354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/PingPongGame$Game.ic" NAME="Game Coverage Results" MODIFIED="1691349934871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>SimplePong.*</FILTER>
     </SUITE>
   </component>

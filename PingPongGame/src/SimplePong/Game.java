@@ -1,5 +1,4 @@
 package SimplePong;
-
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
@@ -21,13 +20,15 @@ public class Game extends Canvas implements Runnable {
        this.setFocusable(true);
 
     }
+    private void initialize(){
+        ball=new Ball();
+        paddle1=new Paddle(Color.green,true);
+        paddle2=new Paddle(Color.red,false);
 
-    private void addKeyListener(KeyInput keyInput) {
     }
 
-    public static int ensureRange(int val,int min,int max) {
-        return Math.min(Math.max(val,min),max);
-    }
+
+
 
 
     private void canvasSetup() {
@@ -67,13 +68,11 @@ public class Game extends Canvas implements Runnable {
 
     }
 
-    private void update() {
-        ball.update(paddle1,paddle2);
 
-        paddle1.update(ball);
-        paddle2.update(ball);
 
-    }
+
+
+
 
     private void draw() {
 
@@ -86,9 +85,9 @@ public class Game extends Canvas implements Runnable {
         Graphics g =buffer.getDrawGraphics();
         drawBackground(g);
 
-         ball.draw(g);
-         paddle1.draw(g);
-         paddle2.draw(g);
+        ball.draw(g);
+        paddle1.draw(g);
+        paddle2.draw(g);
 
 
 
@@ -96,13 +95,6 @@ public class Game extends Canvas implements Runnable {
         buffer.show();
 
     }
-    private void initialize(){
-        ball=new Ball();
-        paddle1=new Paddle(Color.green,true);
-        paddle2=new Paddle(Color.red,false);
-
-    }
-
     private void drawBackground(Graphics g) {
         g.setColor(Color.black);
         g.fillRect(0,0,WIDTH,HEIGHT);
@@ -113,6 +105,13 @@ public class Game extends Canvas implements Runnable {
         g2d.setStroke(dashed);
         g2d.drawLine(WIDTH/2, 0,WIDTH /2,HEIGHT);
 
+
+    }
+    private void update() {
+        ball.update(paddle1,paddle2);
+
+        paddle1.update(ball);
+        paddle2.update(ball);
 
     }
 
@@ -141,6 +140,9 @@ public class Game extends Canvas implements Runnable {
     }
     public static void main(String [] args){
         new Game();
+    }
+    public static int ensureRange(int val,int min,int max) {
+        return Math.min(Math.max(val,min),max);
     }
 
 }

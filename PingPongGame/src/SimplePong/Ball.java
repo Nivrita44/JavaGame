@@ -7,7 +7,6 @@ public class Ball {
     public static final int SIZE =16;
     private int x,y;
     private int xVel,yVel;
-    private int speed = 5;
 
 
     public Ball(){
@@ -45,6 +44,7 @@ public class Ball {
     }
 
     public void update(Paddle paddle1, Paddle paddle2) {
+        int speed = 5;
         x += xVel * speed;
         y += yVel * speed;
 
