@@ -2,13 +2,14 @@ package SimplePong;
 import java.awt.*;
 
 public class Paddle {
-    private int x,y;
+    private final int x;
+    private int y;
     private int vel=0;
-    private int speed = 10;
-    private int width = 22, height=85;
+    private final int width = 22;
+    private final int height=85;
     private int score =0;
     private Color color;
-    private boolean left;
+    private  boolean left;
 
     public Paddle(Color c, boolean left){
          color = c;
@@ -62,7 +63,8 @@ public class Paddle {
     }
 
     public void switchDirection(int direction) {
-        vel=speed * direction;
+        int speed = 10;
+        vel= speed * direction;
 
     }
     public void stop(){
