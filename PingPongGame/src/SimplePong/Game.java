@@ -15,10 +15,14 @@ public class Game extends Canvas implements Runnable {
     private Paddle paddle2;
     public Game() {
         canvasSetup();
-        new Window("Ping Pong",this);
         initialize();
+        new Window("Ping Pong",this);
+       this.addKeyListener(new KeyInput(paddle1,paddle2));
+       this.setFocusable(true);
 
+    }
 
+    private void addKeyListener(KeyInput keyInput) {
     }
 
     public static int ensureRange(int val,int min,int max) {

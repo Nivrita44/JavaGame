@@ -60,4 +60,12 @@ public class Paddle {
                 ball.changeXDir();
         }
     }
+
+    public void switchDirection(int direction) {
+        vel=speed*direction;
+
+    }
+    public void stop(){
+        vel=0;
+    }
 }

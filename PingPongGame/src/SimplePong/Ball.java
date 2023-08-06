@@ -20,6 +20,8 @@ public class Ball {
 
         xVel=Game.sign(Math.random() * 2.0 - 1);
         yVel=Game.sign(Math.random() * 2.0 - 1);
+        xVel=1;
+        yVel=1;
 
     }
     public int getX(){
