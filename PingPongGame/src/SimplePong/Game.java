@@ -12,18 +12,24 @@ public class Game extends Canvas implements Runnable {
     private Ball ball;
     private Paddle paddle1;
     private Paddle paddle2;
+    public Menu menu;
     public Game() {
         canvasSetup();
-        initialize();
+
         new Window("Ping Pong",this);
+
+        initialize();
        this.addKeyListener(new KeyInput(paddle1,paddle2));
+       this.addMouseListener(menu);
+       this.addMouseMotionListener(menu);
        this.setFocusable(true);
 
     }
     private void initialize(){
         ball=new Ball();
-        paddle1=new Paddle(Color.green,true);
+        paddle1=new Paddle(Color.blue,true);
         paddle2=new Paddle(Color.red,false);
+        menu =new Menu(this);
 
     }
 
@@ -85,6 +91,9 @@ public class Game extends Canvas implements Runnable {
         Graphics g =buffer.getDrawGraphics();
         drawBackground(g);
 
+        if(menu.active)
+            menu.draw(g);
+
         ball.draw(g);
         paddle1.draw(g);
         paddle2.draw(g);
@@ -108,11 +117,13 @@ public class Game extends Canvas implements Runnable {
 
     }
     private void update() {
-        ball.update(paddle1,paddle2);
+        if (!menu.active) {
+            ball.update(paddle1, paddle2);
 
-        paddle1.update(ball);
-        paddle2.update(ball);
+            paddle1.update(ball);
+            paddle2.update(ball);
 
+        }
     }
 
     public void start(){
